@@ -9,7 +9,7 @@ type RegistrationType = {
 
 
 export const registration = async ({email, password}: RegistrationType) => {
-    const {data} = await api.post('api/user/registration', {email, password, role: "ADMIN"})
+    const {data} = await api.post('api/user/registration', {email, password, role: "USER"})
     localStorage.setItem('token', data)
     return jwtDecode<User>(data)
 }
